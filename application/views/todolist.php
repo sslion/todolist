@@ -19,9 +19,44 @@ $btn_priority = 1;
         </div>
     </div>
 </div>
+<? if ($mode === 'admin') { ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card bg-light mb-3" >
+                <div class="card-body">
+                    <p class="card-text">В режиме "Администратор" показывается список всех заданий всех пользователей, с сортировкой по дате изменения (modify_date). Изменять задачи нельзя.</p>
+                    <p class="card-text">В этом режиме можно просмотреть список пользователей, и добавить новых.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<? } ?>
+<? if ($mode === 'director') { ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card bg-light mb-3" >
+                <div class="card-body">
+                    <p class="card-text">В режиме "Руководитель" показывается список заданий выбранного руководителя (как если бы этот руководитель вошел в систему под своим логином). Руководитель может создать новую задачу, или изменить существующую.</p>
+                    <p class="card-text">Необходимо выбрать "руководителя", от лица которого будут выполняться действия.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<? } ?>
+<? if ($mode === 'empl') { ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card bg-light mb-3" >
+                <div class="card-body">
+                    <p class="card-text">В режиме "Работник" показывается список заданий назначенных выбранному пользователю (как если бы этот пользователь вошел в систему под своим логином). Пользователь может изменить только статус задачи.</p>
+                    <p class="card-text">Необходимо выбрать "пользователя", от лица которого будут выполняться действия.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<? } ?>
 <div class="row">
     <div class="col-lg-12">
-
         <? if ($mode === 'director') { ?>
             <a href="#" id="newTask" class="btn btn-success btn-sm"><i class="fa fa-add"></i>Новая задача</a>
             <!-- <a href="#" id="newTask" data-toggle="modal" data-target="#myModal" class="btn btn-success btn-sm"><i class="fa fa-add"></i>Новая задача</a> -->
